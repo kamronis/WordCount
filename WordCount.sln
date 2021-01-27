@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordCount", "WordCount\WordCount.csproj", "{530AFB8A-CAD6-4F4A-B78B-E6459870127B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text Generator", "Text Generator\Text Generator.csproj", "{D9C714EC-85F5-4170-A56C-28D5E11B3DA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Text Generator", "Text Generator\Text Generator.csproj", "{D9C714EC-85F5-4170-A56C-28D5E11B3DA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickCount", "QuickCount\QuickCount.csproj", "{9FB51436-2AFC-4E11-A31A-9F7EDDB557B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D9C714EC-85F5-4170-A56C-28D5E11B3DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9C714EC-85F5-4170-A56C-28D5E11B3DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9C714EC-85F5-4170-A56C-28D5E11B3DA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB51436-2AFC-4E11-A31A-9F7EDDB557B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB51436-2AFC-4E11-A31A-9F7EDDB557B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB51436-2AFC-4E11-A31A-9F7EDDB557B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB51436-2AFC-4E11-A31A-9F7EDDB557B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
