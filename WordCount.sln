@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Text Generator", "Text Gene
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickCount", "QuickCount\QuickCount.csproj", "{9FB51436-2AFC-4E11-A31A-9F7EDDB557B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlinkInterpret", "FlinkInterpret\FlinkInterpret.csproj", "{ADEF528F-1F18-4924-BB73-6E7D33B41996}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlinkInterpret", "FlinkInterpret\FlinkInterpret.csproj", "{ADEF528F-1F18-4924-BB73-6E7D33B41996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredPolar", "PredPolar\PredPolar.csproj", "{0970FC96-15C6-4D90-815A-1981557619CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{ADEF528F-1F18-4924-BB73-6E7D33B41996}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADEF528F-1F18-4924-BB73-6E7D33B41996}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADEF528F-1F18-4924-BB73-6E7D33B41996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0970FC96-15C6-4D90-815A-1981557619CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0970FC96-15C6-4D90-815A-1981557619CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0970FC96-15C6-4D90-815A-1981557619CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0970FC96-15C6-4D90-815A-1981557619CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
