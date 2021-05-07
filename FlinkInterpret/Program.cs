@@ -67,10 +67,10 @@ namespace FlinkInterpret
             }
             Console.WriteLine($"total words: {cnt}");
             sw.Stop(); Console.WriteLine("=== duration=" + sw.ElapsedMilliseconds);
-            foreach (var pair in hash_dictionary)
-            {
-                Console.WriteLine($"{pair.Key} {pair.Value}");
-            }
+            //foreach (var pair in hash_dictionary)
+            //{
+            //    Console.WriteLine($"{pair.Key} {pair.Value}");
+            //}
 
         }
     }

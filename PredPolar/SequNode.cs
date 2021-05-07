@@ -103,6 +103,23 @@ namespace PredPolar
                 if (!ok) break; // завершение сканирования если хендле выработал ложь
             }
         }
+        public IEnumerable<object> ScanFilter(Func<object, bool> predicate)
+        {
+            long off = 0L;
+            stream.Position = off;
+            long longnelements = br.ReadInt64();
+            if (longnelements != nelements) throw new Exception("Err in stream nelements record");
+            
+            for (int i = 0; i < nelements; i++)
+            {
+                object[] rec = new object[3];
+                rec[0] = br.ReadInt32();
+                rec[1] = br.ReadString();
+                rec[2] = br.ReadInt32();
+                bool ok = predicate(rec);
+                if (ok) yield return rec;
+            }
+        }
 
         public void BuildIndexes()
         {

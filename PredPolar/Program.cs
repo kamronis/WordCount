@@ -5,23 +5,28 @@ using System.Linq;
 
 namespace PredPolar
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
+        {
+            //Main1(args);
+            Main2();
+        }
+        static void Main1(string[] args)
         {
             Random rnd = new Random();
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
 
             Console.WriteLine("Start PredPolar");
-            string path = @"D:\Home\data\";
+            string path = @"C:\Home\data\";
             int num = 0;
             Func<Stream> genStreams = () => File.Open(path + "media" + (num++) + ".bin", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
-            int nelements = 100_000_000;
+            int nelements = 10_000_000;
 
             SequNode db = new SequNode(genStreams);
 
-            bool toload = true;
+            bool toload = false;
             if (toload)
             {
                 sw.Restart();
