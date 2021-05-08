@@ -28,7 +28,7 @@ namespace FlinkInterpret
             Console.WriteLine(cnt_symbls + " symbols");
             Console.WriteLine(line);
             sw.Stop(); Console.WriteLine("=== duration=" + sw.ElapsedMilliseconds);
-
+            var elements = source.Elements();
             sw.Restart();
             source.Reset();
             long cnt = 0;
@@ -54,7 +54,6 @@ namespace FlinkInterpret
                 {
                     cnt++;
                     string key = word;
-                    int val = 1;
                     if (!hash_dictionary.ContainsKey(key))
                     {
                         hash_dictionary.Add(key, 1);
