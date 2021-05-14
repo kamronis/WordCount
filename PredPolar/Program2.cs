@@ -16,13 +16,13 @@ namespace PredPolar
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
 
             Console.WriteLine("Start PredPolar");
-            string path = @"C:\Home\data\";
+            string path = @"D:\Home\data\PredPolarData\";
             int num = 0;
             Func<Stream> genStreams = () => File.Open(path + "media" + (num++) + ".bin", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
-            int nbits = 2; // Сколько младших битов идет на номер секции
+            int nbits = 4; // Сколько младших битов идет на номер секции
             int nsections = 1 << nbits;
-            int nelements = 1_000_000_000;
+            int nelements = 2_000_000_000;
 
             SequNode[] db_arr = Enumerable.Repeat(0, nsections).Select(i => new SequNode(genStreams)).ToArray();
 
@@ -40,10 +40,13 @@ namespace PredPolar
                     int nsec = key & (nsections - 1);
                     db_arr[nsec].AppendElement(d);
                 }
+                sw.Stop();
+                Console.WriteLine($"after load  {nelements} elements. duration: {sw.ElapsedMilliseconds} ms.");
+                sw.Restart();
                 foreach (var db in db_arr) db.Flush();
                 foreach (var db in db_arr) db.BuildIndexes();
                 sw.Stop();
-                Console.WriteLine($"load of {nelements} ok. duration: {sw.ElapsedMilliseconds} ms.");
+                Console.WriteLine($"Build indexed ok. duration: {sw.ElapsedMilliseconds} ms.");
             }
             else
             {
@@ -86,4 +89,11 @@ namespace PredPolar
 
         }
     }
+    // 10 млн., рабочий компьютер, 16 Гб ОЗУ -- 5.6 s, 1.5 s, 100 ms
+    // 100 млн.  -- 113 s, 16 s, 122 ms
+    // 1 млрд.  -- 2941 s, 658 s, 49 s (диска: 29 Гб, ОЗУ: 3 Гб)
+    // 1 млрд. (8 секций)  -- 626+733 s, 369 s, 48 s (диска: 29 Гб, ОЗУ: 2.8 Гб)
+    // 1 млрд. (8 секций)  -- 496+690 s, 369 s, 49.7 s (диска: 29 Гб, ОЗУ: 2.8 Гб)
+    // 2 млрд. (8 секций)  -- 2961+2026 s, 1471 s, 66 s (диска: 58 Гб, ОЗУ: 3.9 Гб)
+    // 2 млрд. (16 секций)  -- 2107+2362 s, 1643 s, 59 s (диска: 58 Гб, ОЗУ: ?? Гб)
 }
