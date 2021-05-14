@@ -6,4 +6,8 @@
     <RootNamespace>Text_Generator</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FlinkInterpret\FlinkInterpret.csproj" />
+  </ItemGroup>
+
 </Project>
